@@ -6,18 +6,18 @@ Source: https://sketchfab.com/3d-models/japanese-tea-shop-b7c5d071f3dc46b596aef6
 Title: Japanese Tea Shop
 */
 
-import React, { useRef , useEffect} from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
-import { a } from '@react-spring/three'
+import {a} from '@react-spring/three'
 
-import japanese_tea_shop from '../assets/3d/japanese_tea_shop.glb';
+import japaneseTeaShopPath from '../assets/3d/japanese_tea_shop.glb';
 
-const  Shop = (props) => {
-    const shopRef = useRef();
-  const { nodes, materials } = useGLTF('/japanese_tea_shop.glb')
+const Shop = (props) => {
+  const shopRef = useRef();
+  const { nodes, materials } = useGLTF(japaneseTeaShopPath)
   return (
-    <a.group ref={shopRef} {...props}>
+    <a.group ref={ shopRef }{...props}>
       <group scale={0.01}>
         <group position={[0, 100, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
           <mesh
@@ -754,7 +754,7 @@ const  Shop = (props) => {
           scale={17.487}
         />
       </group>
-    </a.group>
+      </a.group>
   )
 }
 
