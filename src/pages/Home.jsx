@@ -1,6 +1,7 @@
 import React , { Suspense }from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
+import Shop from '../models/Shop'
 
 const Home = () => {
   return (
@@ -16,6 +17,8 @@ const Home = () => {
           <pointLight position={[10, 10, 10]} />
           <spotLight position={[0, 10, 0]} />
           <hemisphereLight skyColor={'#ffffff'} groundColor={'#000000'} intensity={0.5} />
+
+          <Shop />
         </Suspense>
       </Canvas>
 
