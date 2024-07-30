@@ -1,11 +1,13 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <div>
       <main className='bg-slate-300.20'>
         <Router>
+          <Navbar />
           <Routes>
             <Route path='/' element={'Home'} />
             <Route path='/about' element={'About'} />
