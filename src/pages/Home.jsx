@@ -10,8 +10,13 @@ const Home = () => {
 
       </div> */}
       <Canvas className='w-full h-screen relative' camera={{near:0.1, far:100}}>
-      <Suspense fallback={<Loader/>}>
-      </Suspense>
+        <Suspense fallback={<Loader/>}>
+          <directionalLight intensity={0.5} position={[0, 10, 0]} />
+          <ambientLight intensity={0.1} />
+          <pointLight position={[10, 10, 10]} />
+          <spotLight position={[0, 10, 0]} />
+          <hemisphereLight skyColor={'#ffffff'} groundColor={'#000000'} intensity={0.5} />
+        </Suspense>
       </Canvas>
 
     </section>
