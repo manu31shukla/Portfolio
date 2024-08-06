@@ -13,7 +13,8 @@ import {a} from '@react-spring/three'
 
 import japaneseTeaShopPath from '../assets/3d/japanese_tea_shop.glb';
 
-const Shop = ({scale, position, rotation, isRotating, setIsRotating, ...props}) => {
+const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurrentStage,
+  ...props}) => {
   const shopRef = useRef();
 
   const {gl, viewport} = useThree();
@@ -80,12 +81,12 @@ useFrame(() => {
       rotationSpeed.current=0;
     }
     else{
-      const rotation = islandRef.current.rotation.y;
+      const rotation = shopRef.current.rotation.y;
 
       const normalizedRotation =
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
-      // Set the current stage based on the island's orientation
+      // Set the current stage based on the shop's orientation
       switch (true) {
         case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
           setCurrentStage(4);
@@ -125,7 +126,7 @@ useEffect(() => {
 
 
   return (
-<a.group ref={shopRef} scale={scale} position={position} {...props}>
+<a.group ref={shopRef} scale={scale} position={position}setCurrentStage={setCurrentStage}  {...props}>
       <group scale={0.01}>
         <group position={[0, 100, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
           <mesh  

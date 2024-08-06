@@ -7,6 +7,8 @@ import Bird from '../models/Bird'
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
+  const [currentStage, setCurrentStage] = useState(1);
+
 
   const adjustShopScreenSize = () => {
     let screenScale= null;
@@ -88,6 +90,8 @@ const Home = () => {
             rotation={shopRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+
           />
         </Suspense>
       </Canvas>
