@@ -6,10 +6,10 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-const App = () => {
+const App = () => { 
   return (
     <div>
-      <main className='bg-slate-300.20'>
+      <main className='bg-brown'>
         <Router>
           <Navbar />
           <Routes>
