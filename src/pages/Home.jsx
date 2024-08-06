@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import Shop from '../models/Shop'
 import Sky from '../models/Sky'
+import Bird from '../models/Bird'
 
 const Home = () => {
   const adjustShopScreenSize = () => {
@@ -21,11 +22,11 @@ const Home = () => {
 
   const adjustSkyScreenSize = () => {
     let screenScale = [1, 1, 1]; 
-    let screenPosition = [-6, 2, 0]; 
+    let screenPosition = [-3, 2, 0]; 
     let rotation = [0, 0, 0]; 
 
     if (window.innerWidth < 768) {
-      screenScale = [0.5, 0.5, 0.5];
+      screenScale = [0.3, 0.3, 0.3];
     } else {
       screenScale = [0.4, 0.4, 0.4];
     }
@@ -33,8 +34,23 @@ const Home = () => {
     return [screenScale, screenPosition, rotation];
   };
 
+  const adjustBirdScreenSize = () => {
+    let screenScale = [1, 1, 1]; 
+    let screenPosition = [-3, 0, 0]; 
+    let rotation = [0, 0, 0]; 
+
+    if (window.innerWidth < 768) {
+      screenScale = [0.0002, 0.0002, 0.0002];
+    } else {
+      screenScale = [0.003, 0.003, 0.003];
+    }
+
+    return [screenScale, screenPosition, rotation];
+  };
+
   const [shopScale, shopPosition, shopRotation]= adjustShopScreenSize();
   const [skyScale, skyPosition, skyRotation] = adjustSkyScreenSize();
+  const [birdScale, birdPosition, birdRotation] = adjustBirdScreenSize();
 
   return (
     <section className='w-full h-screen relative'>
@@ -54,6 +70,12 @@ const Home = () => {
           scale={skyScale}
           position={skyPosition}
           rotation={skyRotation}
+          />
+
+          <Bird 
+          scale={birdScale}
+          position={birdPosition}
+          rotation={birdRotation}
           />
 
           <Shop 
