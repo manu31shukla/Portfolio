@@ -48,6 +48,22 @@ const Shop = ({scale, position, rotation, isRotating, setIsRotating, ...props}) 
     rotationSpeed.current = delta * 0.01 * Math.PI;
   }
 
+  const handleKeyDown = (e) => {  
+    if(e.key === 'ArrowRight') {
+      shopRef.current.rotation.y -= 0.1 * Math.PI;
+      if(!isRotating) { setIsRotating(true); }
+    } else if(e.key === 'ArrowLeft') {
+      shopRef.current.rotation.y += 0.01 * Math.PI;
+      if(!isRotating) { setIsRotating(true); }
+    }
+  }
+
+  const handleKeyUp = (e) => {  
+    if(e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      setIsRotating(false);
+     }
+    }
+
   const handlePointerMove = (e) => {
     e.stopPropagation();
     e.preventDefault(); 
@@ -61,14 +77,18 @@ useEffect(() => {
   document.addEventListener('pointerdown', handlePointerDown);
   document.addEventListener('pointerup', handlePointerUp);
   document.addEventListener('pointermove', handlePointerMove);
+  document.addEventListener('keydown', handleKeyDown);
+  document.addEventListener('keyup', handleKeyUp);
 
   return () => {
     document.removeEventListener('pointerdown', handlePointerDown);
     document.removeEventListener('pointerup', handlePointerUp);
     document.removeEventListener('pointermove', handlePointerMove);
+    document.removeEventListener('keydown', handleKeyDown);
+    document.removeEventListener('keyup', handleKeyUp);
   }
 },
-[gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+[gl, handlePointerDown, handlePointerUp, handlePointerMove, handleKeyDown, handleKeyUp]);
 
 
   return (
