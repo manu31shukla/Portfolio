@@ -13,11 +13,17 @@ import {a} from '@react-spring/three'
 
 import japaneseTeaShopPath from '../assets/3d/japanese_tea_shop.glb';
 
-const Shop = (props) => {
+const Shop = ({scale, position, rotation, isRotating, setIsRotating, ...props}) => {
   const shopRef = useRef();
+
+  const {gl, viewport} = useThree();
   const { nodes, materials } = useGLTF(japaneseTeaShopPath)
+
+  const lastX = useRef(0);
+  const rotationSpeed = useRef(0);
+  const dampingFactor = 0.95;
   return (
-    <a.group ref={ shopRef }{...props}>
+<a.group ref={shopRef} scale={scale} position={position} {...props}>
       <group scale={0.01}>
         <group position={[0, 100, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
           <mesh  

@@ -1,4 +1,4 @@
-import React , { Suspense }from 'react'
+import React , { Suspense, useState }from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import Shop from '../models/Shop'
@@ -6,6 +6,8 @@ import Sky from '../models/Sky'
 import Bird from '../models/Bird'
 
 const Home = () => {
+  const [isRotating, setIsRotating] = useState(false);
+
   const adjustShopScreenSize = () => {
     let screenScale= null;
     let screenPosition = [0, -7.8, -43];
@@ -58,7 +60,8 @@ const Home = () => {
       POPUP
 
       </div> */}
-      <Canvas className='w-full h-screen relative' camera={{near:0.1, far:100}}>
+      <Canvas 
+      className = {`w-full h-screen bg-transparent ${isRotating ? 'curson-grabbing' : 'cursor-grab'}`} camera={{near:0.1, far:100}}>
         <Suspense fallback={<Loader/>}>
           <directionalLight castShadow intensity={0.5} position={[10, 20, 10]} shadow-mapSize-width={2048}   shadow-mapSize-height={2048}/>
           <ambientLight intensity={0.5} />
@@ -76,12 +79,15 @@ const Home = () => {
           scale={birdScale}
           position={birdPosition}
           rotation={birdRotation}
+          isRotating={isRotating}
           />
 
           <Shop 
             position={shopPosition}
             scale={shopScale}
             rotation={shopRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
           />
         </Suspense>
       </Canvas>
