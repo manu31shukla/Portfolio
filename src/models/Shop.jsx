@@ -20,7 +20,8 @@ const Shop = (props) => {
     <a.group ref={ shopRef }{...props}>
       <group scale={0.01}>
         <group position={[0, 100, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-          <mesh
+          <mesh  
+              
             
             geometry={nodes.Cube001_Roof_Tiles_0.geometry}
             material={materials.Roof_Tiles}
@@ -377,8 +378,8 @@ const Shop = (props) => {
           />
         </group>
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube_Building_0.geometry}
           material={materials.Building}
           position={[0, 100, 0]}
@@ -386,8 +387,8 @@ const Shop = (props) => {
           scale={100}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle_Roof_Tiles_0.geometry}
           material={materials.Roof_Tiles}
           position={[-100.403, 174.392, 91.278]}
@@ -395,8 +396,8 @@ const Shop = (props) => {
           scale={[4.662, 4.567, 4.567]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle004_Roof_Tiles_0.geometry}
           material={materials.Roof_Tiles}
           position={[125.919, 112.366, 66.376]}
@@ -404,8 +405,8 @@ const Shop = (props) => {
           scale={[4.662, 2.624, 2.852]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle006_Roof_Tiles_0.geometry}
           material={materials.Roof_Tiles}
           position={[95.831, 174.392, -90.644]}
@@ -413,8 +414,8 @@ const Shop = (props) => {
           scale={[4.662, 4.567, 4.567]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube002_Roof_Tiles_0.geometry}
           material={materials.Roof_Tiles}
           position={[0, 100, 0]}
@@ -422,8 +423,8 @@ const Shop = (props) => {
           scale={100}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Vert001_Roof_Tiles_0.geometry}
           material={materials.Roof_Tiles}
           position={[-105.964, 237.742, 3.186]}
@@ -431,8 +432,8 @@ const Shop = (props) => {
           scale={100}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle001_Roof_Tiles_0.geometry}
           material={materials.Roof_Tiles}
           position={[-89.93, 112.366, 107.116]}
@@ -440,8 +441,8 @@ const Shop = (props) => {
           scale={[4.662, 2.624, 2.852]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Vert003_Roof_Tiles_0.geometry}
           material={materials.Roof_Tiles}
           position={[-103.737, 237.742, -2.806]}
@@ -449,8 +450,8 @@ const Shop = (props) => {
           scale={100}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube015_Brown_0.geometry}
           material={materials.Brown}
           position={[-70.38, 62.224, 79.904]}
@@ -458,8 +459,8 @@ const Shop = (props) => {
           scale={100}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube007_Material002_0.geometry}
           material={materials['Material.002']}
           position={[0, -3.73, 0]}
@@ -467,8 +468,8 @@ const Shop = (props) => {
           scale={100}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube008_Material009_0.geometry}
           material={materials['Material.009']}
           position={[0, -3.73, 0]}
@@ -476,8 +477,8 @@ const Shop = (props) => {
           scale={100}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane_Red_0.geometry}
           material={materials.material}
           position={[4.604, 18.294, -4.31]}
@@ -485,8 +486,8 @@ const Shop = (props) => {
           scale={[17.376, 17.376, 16.361]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube010_Brown_0.geometry}
           material={materials.Brown}
           position={[4.413, 35.564, -66.505]}
@@ -494,8 +495,8 @@ const Shop = (props) => {
           scale={[-24.935, 3.717, 5.749]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Vert007_Black_0.geometry}
           material={materials.Black}
           position={[-2.496, 20.327, -0.222]}
@@ -503,8 +504,8 @@ const Shop = (props) => {
           scale={87.545}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Vert006_Material017_0.geometry}
           material={materials['Material.017']}
           position={[-116.145, 1.889, 111.466]}
@@ -512,8 +513,8 @@ const Shop = (props) => {
           scale={184.907}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane001_Brown_0.geometry}
           material={materials.Brown}
           position={[100, 174.81, 0]}
@@ -521,8 +522,8 @@ const Shop = (props) => {
           scale={4.717}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane002_Brown_0.geometry}
           material={materials.Brown}
           position={[-100.466, 174.81, 0]}
@@ -530,8 +531,8 @@ const Shop = (props) => {
           scale={4.717}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube016_Red_0.geometry}
           material={materials.material}
           position={[63.372, 21.628, -70.522]}
@@ -539,16 +540,16 @@ const Shop = (props) => {
           scale={[13.62, 7.166, 17.383]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane003_Material011_0.geometry}
           material={materials['Material.011']}
           position={[5.215, 134.246, 104.742]}
           scale={[43.744, 16.516, 12.508]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane015_Material016_0.geometry}
           material={materials['Material.016']}
           position={[-159.623, -33.655, 81.926]}
@@ -556,8 +557,8 @@ const Shop = (props) => {
           scale={[-1.81, 1.872, 1.714]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane004_Material016_0.geometry}
           material={materials['Material.016']}
           position={[-159.623, -33.655, 105.29]}
@@ -565,8 +566,8 @@ const Shop = (props) => {
           scale={[-1.233, 1.275, 1.167]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane005_Material016_0.geometry}
           material={materials['Material.016']}
           position={[-159.623, -33.655, 52.814]}
@@ -574,8 +575,8 @@ const Shop = (props) => {
           scale={[-1.607, 1.662, 1.521]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane006_Material016_0.geometry}
           material={materials['Material.016']}
           position={[-199.019, -33.337, 41.241]}
@@ -583,8 +584,8 @@ const Shop = (props) => {
           scale={[-1.364, 1.57, 1.225]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane007_Material016_0.geometry}
           material={materials['Material.016']}
           position={[-181.475, -33.337, -43.19]}
@@ -592,8 +593,8 @@ const Shop = (props) => {
           scale={[-1.885, 2.169, 1.692]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube009_Brown_0.geometry}
           material={materials.Brown}
           position={[-62.079, 35.544, -70.644]}
@@ -601,8 +602,8 @@ const Shop = (props) => {
           scale={[16.734, 18.974, 18.974]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cube020_Material009_0.geometry}
           material={materials['Material.009']}
           position={[-83.643, 30.626, 57.043]}
@@ -610,8 +611,8 @@ const Shop = (props) => {
           scale={12.462}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle008_Red_0.geometry}
           material={materials.material}
           position={[33.328, 5.245, -5.204]}
@@ -619,8 +620,8 @@ const Shop = (props) => {
           scale={[7.943, 7.943, 5.069]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle009_Red_0.geometry}
           material={materials.material}
           position={[4.81, 5.251, 25.585]}
@@ -628,8 +629,8 @@ const Shop = (props) => {
           scale={[7.943, 7.943, 5.069]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle010_Red_0.geometry}
           material={materials.material}
           position={[-26.624, 5.509, -1.313]}
@@ -637,8 +638,8 @@ const Shop = (props) => {
           scale={[7.943, 7.943, 5.069]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Plane010_Material026_0.geometry}
           material={materials['Material.026']}
           position={[0.551, 5.264, 1.103]}
@@ -646,8 +647,8 @@ const Shop = (props) => {
           scale={46.572}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cylinder001_Black_0.geometry}
           material={materials.Black}
           position={[12.452, 22.794, -11.587]}
@@ -655,8 +656,8 @@ const Shop = (props) => {
           scale={2.33}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Cylinder002_Black_0.geometry}
           material={materials.Black}
           position={[8.86, 22.794, 6.928]}
@@ -664,8 +665,8 @@ const Shop = (props) => {
           scale={2.33}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle011_Black_0.geometry}
           material={materials.Black}
           position={[-41.594, 42.737, -59.032]}
@@ -673,8 +674,8 @@ const Shop = (props) => {
           scale={[-1.694, 1.694, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle012_Black_0.geometry}
           material={materials.Black}
           position={[-83.303, 42.737, -59.032]}
@@ -682,8 +683,8 @@ const Shop = (props) => {
           scale={[-1.694, 1.694, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle013_Black_0.geometry}
           material={materials.Black}
           position={[-41.594, 28.865, -59.032]}
@@ -691,8 +692,8 @@ const Shop = (props) => {
           scale={[-2.503, 2.503, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle014_Black_0.geometry}
           material={materials.Black}
           position={[-83.303, 28.865, -59.032]}
@@ -700,8 +701,8 @@ const Shop = (props) => {
           scale={[-2.503, 2.503, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle015_Black_0.geometry}
           material={materials.Black}
           position={[-41.594, 20.845, -59.032]}
@@ -709,8 +710,8 @@ const Shop = (props) => {
           scale={[-2.503, 2.503, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle016_Black_0.geometry}
           material={materials.Black}
           position={[-83.303, 20.845, -59.032]}
@@ -718,8 +719,8 @@ const Shop = (props) => {
           scale={[-2.503, 2.503, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle017_Black_0.geometry}
           material={materials.Black}
           position={[-61.981, 28.865, -59.032]}
@@ -727,8 +728,8 @@ const Shop = (props) => {
           scale={[-2.503, 2.503, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Circle018_Black_0.geometry}
           material={materials.Black}
           position={[-61.981, 20.845, -59.032]}
@@ -736,8 +737,8 @@ const Shop = (props) => {
           scale={[-2.503, 2.503, 2.259]}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Vert002__0.geometry}
           material={materials['Vert.002__0']}
           position={[-10.96, 132.545, 105.951]}
@@ -745,8 +746,8 @@ const Shop = (props) => {
           scale={15.246}
         />
         <mesh
-          castShadow
-          receiveShadow
+           
+            
           geometry={nodes.Vert004__0.geometry}
           material={materials['Vert.002__0']}
           position={[20.27, 133.01, 106.095]}

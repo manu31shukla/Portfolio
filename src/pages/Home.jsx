@@ -6,13 +6,13 @@ import Shop from '../models/Shop'
 const Home = () => {
   const adjustShopScreenSize = () => {
     let screenScale= null;
-    let screenPosition = [0, -6.5, -43];
-    let rotation = [0, -0.3, 0.05];
+    let screenPosition = [0, -7.8, -43];
+    let rotation = [0, 0, 0];
 
     if (window.innerWidth < 768) {
       screenScale = [6, 6, 6];
     } else {
-      screenScale = [10, 10, 10];
+      screenScale = [11, 10, 11];
     }
 
     return [screenScale, screenPosition, rotation];
@@ -27,11 +27,11 @@ const Home = () => {
       </div> */}
       <Canvas className='w-full h-screen relative' camera={{near:0.1, far:100}}>
         <Suspense fallback={<Loader/>}>
-          <directionalLight intensity={0.5} position={[0, 4, 10]} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <spotLight position={[0, 10, 0]} />
-          <hemisphereLight skyColor={'#ffffff'} groundColor={'#000000'} intensity={0.5} />
+          <directionalLight castShadow intensity={0.5} position={[10, 20, 10]} shadow-mapSize-width={2048}   shadow-mapSize-height={2048}/>
+          <ambientLight intensity={0.3} />
+          <pointLight intensity={0.8} position={[10, 10, 10]} />
+          <spotLight intensity={1} position={[0, 20, 0]} angle={0.3} penumbra={1} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
+          <hemisphereLight skyColor={'#ffffff'} groundColor={'#000000'} intensity={0.6} />
 
           <Shop 
             position={shopPosition}
