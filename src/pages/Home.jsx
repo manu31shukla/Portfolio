@@ -2,6 +2,7 @@ import React , { Suspense }from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import Shop from '../models/Shop'
+import Sky from '../models/Sky'
 
 const Home = () => {
   const adjustShopScreenSize = () => {
@@ -18,7 +19,23 @@ const Home = () => {
     return [screenScale, screenPosition, rotation];
   }
 
+  const adjustSkyScreenSize = () => {
+    let screenScale = [1, 1, 1]; 
+    let screenPosition = [-6, 2, 0]; 
+    let rotation = [0, 0, 0]; 
+
+    if (window.innerWidth < 768) {
+      screenScale = [0.5, 0.5, 0.5];
+    } else {
+      screenScale = [0.4, 0.4, 0.4];
+    }
+
+    return [screenScale, screenPosition, rotation];
+  };
+
   const [shopScale, shopPosition, shopRotation]= adjustShopScreenSize();
+  const [skyScale, skyPosition, skyRotation] = adjustSkyScreenSize();
+
   return (
     <section className='w-full h-screen relative'>
       {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
@@ -32,6 +49,12 @@ const Home = () => {
           <pointLight intensity={0.8} position={[10, 10, 10]} />
           <spotLight intensity={1} position={[0, 20, 0]} angle={0.3} penumbra={1} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
           <hemisphereLight skyColor={'#ffffff'} groundColor={'#000000'} intensity={0.6} />
+
+          <Sky 
+          scale={skyScale}
+          position={skyPosition}
+          rotation={skyRotation}
+          />
 
           <Shop 
             position={shopPosition}
