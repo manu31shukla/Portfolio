@@ -16,9 +16,10 @@ const Home = () => {
     let rotation = [0, 0, 0];
 
     if (window.innerWidth < 768) {
-      screenScale = [6, 6, 6];
+      screenPosition = [0, -8.8, -43];
+      screenScale = [10, 9, 10];
     } else {
-      screenScale = [11, 10, 11];
+      screenScale = [14, 13, 14];
     }
 
     return [screenScale, screenPosition, rotation];
@@ -26,7 +27,7 @@ const Home = () => {
 
   const adjustSkyScreenSize = () => {
     let screenScale = [1, 1, 1]; 
-    let screenPosition = [-3, 2, 0]; 
+    let screenPosition = [-4, 2, 0]; 
     let rotation = [0, 0, 0]; 
 
     if (window.innerWidth < 768) {
@@ -44,7 +45,8 @@ const Home = () => {
     let rotation = [0, 0, 0]; 
 
     if (window.innerWidth < 768) {
-      screenScale = [0.0002, 0.0002, 0.0002];
+      screenPosition = [0, 0, 0]; 
+      screenScale = [0.0005, 0.0002, 0.0002];
     } else {
       screenScale = [0.003, 0.003, 0.003];
     }

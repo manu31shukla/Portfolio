@@ -79,6 +79,9 @@ useFrame(() => {
     rotationSpeed.current *= dampingFactor;
     if(Math.abs(rotationSpeed.current)< 0.001){
       rotationSpeed.current=0;
+
+      shopRef.current.rotation.y += rotationSpeed.current;
+
     }
     else{
       const rotation = shopRef.current.rotation.y;
