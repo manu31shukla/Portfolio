@@ -12,8 +12,28 @@ const Bird = ({ scale, position, rotation, isRotating }) => {
       actions['Take 001'].play();
   }, [])
 
-  useFrame((_, delta) => {
-      ref.current.rotation.y += 0.15 * delta;
+  useFrame(({ clock, camera }) => {
+      ref.current.position.y = Math.sin(clock.elapsedTime)*0.2 + 2
+
+      if(ref.current.position.x > camera.position + 10 ){
+        ref.current.rotation.y = Math.PI;
+      }
+      else if(ref.current.position.x < camera.position - 10 ){
+        ref.current.rotation.y = 0;
+      }
+
+
+
+      if (ref.current.rotation.y === 0){
+        ref.current.position.x += 0.01;
+        ref.current.position.z -= 0.01;
+
+      }
+      else{
+        ref.current.position.x -= 0.01;
+        ref.current.position.z += 0.01;
+
+      }
   })
   
   return (

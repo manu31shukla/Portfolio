@@ -27,11 +27,11 @@ const Home = () => {
   const adjustBirdScreenSize = () => {
     let screenScale = [1, 1, 1]; 
     let screenPosition = [-3, 2, 0]; 
-    let rotation = [0, 0, 0]; 
+    let rotation = [180, 0, 0]; 
 
     if (window.innerWidth < 768) {
       screenPosition = [0, 0, 0]; 
-      screenScale = [0.0005, 0.0002, 0.0002];
+      screenScale = [0.001, 0.001, 0.001];
     } else {
       screenScale = [0.003, 0.003, 0.003];
     }
