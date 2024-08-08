@@ -2,7 +2,6 @@ import React , { Suspense, useState }from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import Shop from '../models/Shop'
-import Sky from '../models/Sky'
 import Bird from '../models/Bird'
 
 const Home = () => {
@@ -16,32 +15,18 @@ const Home = () => {
     let rotation = [0, 0, 0];
 
     if (window.innerWidth < 768) {
-      screenPosition = [0, -8.8, -43];
+      screenPosition = [0, -12, -43];
       screenScale = [10, 9, 10];
     } else {
-      screenScale = [14, 13, 14];
+      screenScale = [15, 15, 15];
     }
 
     return [screenScale, screenPosition, rotation];
   }
 
-  const adjustSkyScreenSize = () => {
-    let screenScale = [1, 1, 1]; 
-    let screenPosition = [-4, 2, 0]; 
-    let rotation = [0, 0, 0]; 
-
-    if (window.innerWidth < 768) {
-      screenScale = [0.3, 0.3, 0.3];
-    } else {
-      screenScale = [0.4, 0.4, 0.4];
-    }
-
-    return [screenScale, screenPosition, rotation];
-  };
-
   const adjustBirdScreenSize = () => {
     let screenScale = [1, 1, 1]; 
-    let screenPosition = [-3, 0, 0]; 
+    let screenPosition = [-3, 2, 0]; 
     let rotation = [0, 0, 0]; 
 
     if (window.innerWidth < 768) {
@@ -55,7 +40,6 @@ const Home = () => {
   };
 
   const [shopScale, shopPosition, shopRotation]= adjustShopScreenSize();
-  const [skyScale, skyPosition, skyRotation] = adjustSkyScreenSize();
   const [birdScale, birdPosition, birdRotation] = adjustBirdScreenSize();
 
   return (
@@ -72,12 +56,6 @@ const Home = () => {
           <pointLight intensity={0.8} position={[10, 10, 10]} />
           <spotLight intensity={1} position={[0, 20, 0]} angle={0.3} penumbra={1} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
           <hemisphereLight skyColor={'#ffffff'} groundColor={'#000000'} intensity={0.6} />
-
-          <Sky 
-          scale={skyScale}
-          position={skyPosition}
-          rotation={skyRotation}
-          />
 
           <Bird 
           scale={birdScale}

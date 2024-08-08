@@ -1,6 +1,7 @@
 import { useAnimations, useGLTF } from '@react-three/drei';
 import React , { useEffect, useRef }from 'react';
 import birdScene from '../assets/3d/bird.glb';
+import { useFrame } from '@react-three/fiber';
 
 const Bird = ({ scale, position, rotation, isRotating }) => {
   const ref = useRef();
@@ -8,13 +9,12 @@ const Bird = ({ scale, position, rotation, isRotating }) => {
   const { actions } = useAnimations(animations, ref)
 
   useEffect(() => {
-    if(isRotating){
       actions['Take 001'].play();
-    }
-    else{
-      actions['Take 001'].stop();
-    }
-  }, [actions, isRotating])
+  }, [])
+
+  useFrame((_, delta) => {
+      ref.current.rotation.y += 0.15 * delta;
+  })
   
   return (
     <mesh scale={scale} position={position} rotation={rotation} ref={ref}>
