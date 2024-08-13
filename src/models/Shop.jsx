@@ -25,7 +25,7 @@ const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurren
   const dampingFactor = 0.95;
 
   const handlePointerDown = (e) => {
-    e.stopPropagation(); //mouse click will only affect the clicked object
+    e.stopPropagation(); 
     e.preventDefault(); 
     setIsRotating(true);
 
@@ -51,7 +51,7 @@ const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurren
 
   const handleKeyDown = (e) => {  
     if(e.key === 'ArrowRight') {
-      shopRef.current.rotation.y -= 0.1 * Math.PI;
+      shopRef.current.rotation.y -= 0.01 * Math.PI;
       if(!isRotating) { setIsRotating(true); }
     } else if(e.key === 'ArrowLeft') {
       shopRef.current.rotation.y += 0.01 * Math.PI;
@@ -128,6 +128,15 @@ useEffect(() => {
 },
 [gl, handlePointerDown, handlePointerUp, handlePointerMove, handleKeyDown, handleKeyUp]);
 
+useFrame(() => {
+  if (isRotating) {
+    shopRef.current.rotation.y += rotationSpeed.current;
+  } else {
+    rotationSpeed.current *= dampingFactor;
+    shopRef.current.rotation.y += rotationSpeed.current;
+  }
+
+});
 
   return (
 <a.group ref={shopRef} scale={scale} position={position}setCurrentStage={setCurrentStage}  {...props}>
