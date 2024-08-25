@@ -125,7 +125,7 @@ const HomeInfo = ({ currentStage }) => {
       endMonth: 'April',
       endYear: 2023,
       company: 'SpellWork Technologies',
-      companyLogo: 'https://drive.google.com/uc?export=view&id=18XA6AwUTXoQxbIVLEa5pYnQwYdJtOSII',
+      companyLogo: 'https://img.icons8.com/?size=100&id=u8QOFrHdMqkX&format=png&color=000000',
       position: 'UI/UX Designer Intern',
       details: `1. Feature Enhancement: Enhanced features including multiple event images, recurring event days, and attendee spot
       visibility using Material UI libraries and TypeScript, leading to a 15% increase in event attendance.         
@@ -167,7 +167,7 @@ const HomeInfo = ({ currentStage }) => {
                   {projects.map((project, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between border-b border-[#3e2723] py-2 cursor-pointer hover:bg-[#e0e0e0]"
+                      className="flex items-center justify-between border-b border-[#3e2723] py-2 cursor-pointer hover:bg-brown"
                       onClick={() => setSelectedProject(project)}
                     >
                       <div className="flex-1 flex items-center">
@@ -181,19 +181,32 @@ const HomeInfo = ({ currentStage }) => {
                   ))}
                 </div>
                 {selectedProject && (
-                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedProject(null)}>
-                    <div className="bg-white p-6 rounded-lg max-w-lg" onClick={e => e.stopPropagation()}>
-                      <h2 className="text-[#3e2723] text-xl font-bold">{selectedProject.name}</h2>
-                      <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-48 object-cover mt-4" />
-                      <p className="text-[#3e2723] mt-4">{selectedProject.longDescription}</p>
-                      <div className="mt-4">
-                        <a href={selectedProject.githubLink} className="text-brown hover:underline" target="_blank" rel="noopener noreferrer">GitHub Link</a>
-                        <br />
-                        <a href={selectedProject.hostedLink} className="text-brown hover:underline" target="_blank" rel="noopener noreferrer">Hosted Link</a>
-                      </div>
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedProject(null)}>
+                  <div className="bg-darkBrown text-white p-6 rounded-lg max-w-lg" onClick={e => e.stopPropagation()}>
+                    <h2 className="text-[#3e2723] text-xl font-bold">{selectedProject.name}</h2>
+                    <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-48 object-cover mt-4" />
+                    <p className="text-[#3e2723] mt-4">{selectedProject.longDescription}</p>
+                    <div className="mt-4 flex space-x-4">
+                      <a
+                        href={selectedProject.githubLink}
+                        className="bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub Link
+                      </a>
+                      <a
+                        href={selectedProject.hostedLink}
+                        className="bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Hosted Link
+                      </a>
                     </div>
                   </div>
-                )}
+                </div>
+              )}
               </div>
             );
             case 1:
@@ -204,7 +217,7 @@ const HomeInfo = ({ currentStage }) => {
                     {experiences.map((experience, index) => (
                       <div
                         key={index}
-                        className="border-b border-[#3e2723] py-4 cursor-pointer hover:bg-[#e0e0e0]"
+                        className="border-b border-[#3e2723] py-4 cursor-pointer hover:bg-brown"
                         onClick={() => setSelectedExperience(experience)}
                       >
                         <div className="flex items-center">
@@ -218,18 +231,26 @@ const HomeInfo = ({ currentStage }) => {
                     ))}
                   </div>
                   {selectedExperience && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedExperience(null)}>
-                      <div className="bg-white p-6 rounded-lg max-w-lg" onClick={e => e.stopPropagation()}>
-                        <h2 className="text-[#3e2723] text-xl font-bold">{selectedExperience.company} 🌟</h2>
-                        <p className="text-[#3e2723] mt-2">{selectedExperience.details}</p>
-                        <div className="flex gap-4 mt-4">
-                          {selectedExperience.screenshots.map((screenshot, index) => (
-                            <img key={index} src={screenshot} alt={`Screenshot ${index + 1}`} className="w-1/2 h-40 object-cover" />
-                          ))}
-                        </div>
+                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedExperience(null)}>
+                    <div className="bg-white p-6 rounded-lg max-w-lg" onClick={e => e.stopPropagation()}>
+                      <h2 className="text-[#3e2723] text-xl font-bold">{selectedExperience.company} 🌟</h2>
+                      <p className="text-[#3e2723] mt-2">{selectedExperience.details}</p>
+                      <div className="flex gap-4 mt-4">
+                        {selectedExperience.screenshots.map((screenshot, index) => (
+                          <a
+                            key={index}
+                            href={screenshot}
+                            className="w-1/2 h-40 bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300 flex items-center justify-center"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={screenshot} alt={`Screenshot ${index + 1}`} className="w-full h-full object-cover rounded" />
+                          </a>
+                        ))}
                       </div>
                     </div>
-                  )}
+                  </div>
+                )}
                 </div>
               );
       default:
