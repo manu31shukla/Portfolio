@@ -27,6 +27,15 @@ export default {
       },
       boxShadow: {
         card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)'
+      },
+      keyframes: {
+        'enlarge': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+        },
+      },
+      animation: {
+        'enlarge': 'enlarge 1s ease-in-out',
       }
     },
   },
