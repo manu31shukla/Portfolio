@@ -8,8 +8,8 @@ const Navbar = () => {
         <p className='brown-gradient_text'>MS</p>
         </NavLink>
         <nav className='flex text-lg gap-4 font-medium'>
-        <NavLink to='/about' className={({ isActive}) => isActive? 'text-brown' : 'text-black'}>About</NavLink>
-        <NavLink to='/contact' className={({ isActive}) => isActive? 'text-brown' : 'text-black'}>Contact</NavLink>
+        <NavLink to='/about' className={({ isActive}) => isActive? 'text-white' : 'text-black'}>About</NavLink>
+        <NavLink to='/contact' className={({ isActive}) => isActive? 'text-white' : 'text-black'}>Contact</NavLink>
         </nav>
       
     </header>

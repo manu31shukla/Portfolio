@@ -13,6 +13,15 @@ export default {
         darkBrown: {
           DEFAULT: "#B7A69E"
         },
+        coffeeDark: {
+          DEFAULT: "#3e2723",
+        },
+        coffeeLight: {
+          DEFAULT: "#6d4c41",
+        },
+        coffee: {
+          DEFAULT: "#4e342e",
+        },
         gray: {
           200: "#D5DAE1"
         },
