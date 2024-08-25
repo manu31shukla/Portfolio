@@ -27,10 +27,10 @@ const SoundToggle = ({ isSoundOn, toggleSound, isMobile }) => {
       <div 
         className='absolute z-20' 
         style={{ 
-          bottom: isMobile ? '55px' : '40px', 
-          left: isMobile ? '25px' : '155px',
-          width: isMobile ? '20px' : '305px', 
-          height: isMobile ? '20px' : '305px'
+          bottom: isMobile ? '60px' : '40px', 
+          left: isMobile ? '0px' : '155px',
+          width: isMobile ? '100px' : '305px', 
+          height: isMobile ? '100px' : '305px'
         }}
       >
         <img
