@@ -10,20 +10,19 @@ const Bird = ({ scale, position, rotation, isRotating }) => {
 
   useEffect(() => {
       actions['Take 001'].play();
-  }, [])
+  }, [actions])
 
   useFrame(({ clock, camera }) => {
       ref.current.position.y = Math.sin(clock.elapsedTime)*0.2 + 2
 
-      if(ref.current.position.x > camera.position + 10 ){
+      if(ref.current.position.x > camera.position.x + 12 ){
         ref.current.rotation.y = Math.PI;
+        ref.current.position.z += 1;
       }
-      else if(ref.current.position.x < camera.position - 10 ){
+      else if(ref.current.position.x < camera.position.x - 12 ){
         ref.current.rotation.y = 0;
+        ref.current.position.z -= 1;
       }
-
-
-
       if (ref.current.rotation.y === 0){
         ref.current.position.x += 0.01;
         ref.current.position.z -= 0.01;
