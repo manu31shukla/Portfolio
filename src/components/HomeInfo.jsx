@@ -138,17 +138,25 @@ const HomeInfo = ({ currentStage }) => {
     switch (currentStage) {
       case 4:
         return (
-          <div className="popup bg-[#f5f5dc] border-2 border-[#3e2723] p-6 rounded-lg shadow-lg text-center max-w-md mx-auto">
-            <h2 className="text-[#3e2723] text-xl font-bold">👋 Welcome to My Coffee Shop ☕</h2>
-            <p className="text-[#3e2723] mt-2">Hello! I'm Manu Shukla, a software developer. Let's explore my portfolio together!</p>
+          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-6 rounded-xl shadow-lg text-center max-w-sm mx-auto transform transition-transform duration-500 hover:scale-105">
+            <h2 className="text-[#3e2723] text-xl font-bold tracking-wide mb-3 flex items-center justify-center">
+              👋 Welcome to My Coffee Shop <span className="ml-2 animate-pulse">☕</span>
+            </h2>
+            <p className="text-[#3e2723] mt-2 text-base font-medium">
+              Hello! I'm <span className="font-bold underline">Manu Shukla</span>, a software developer. Let's explore my portfolio together!
+            </p>
           </div>
         );
         case 3:
-          return (
-            <div className="popup bg-[#f5f5dc] border-2 border-[#3e2723] p-6 rounded-lg shadow-lg text-center max-w-md mx-auto">
-              <h2 className="text-[#3e2723] text-xl font-bold">📋 Menu 📋</h2>
-              <p className="text-[#3e2723] mt-2">👨‍💻 These are the skills I own:</p>
-              <div className="flex flex-wrap justify-center mt-4 gap-4">
+        return (
+          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 rounded-xl shadow-lg text-center max-w-sm mx-auto">
+            <h2 className="text-[#3e2723] text-lg font-bold tracking-wide mb-3 flex items-center justify-center">
+              📋 Menu 📋
+            </h2>
+            <p className="text-[#3e2723] mb-3 text-sm font-medium">
+              👨‍💻 Here are the skills I offer:
+            </p>
+            <div className="flex flex-wrap justify-center mt-4 gap-4">
                 {skills.map(skill => (
                   <div key={skill.name} className="skill-item">
                     <img src={skill.logo} alt={skill.name} className="w-16 h-16 object-contain cursor-pointer transition-transform transform hover:scale-110" />
@@ -156,8 +164,8 @@ const HomeInfo = ({ currentStage }) => {
                   </div>
                 ))}
               </div>
-            </div>
-          );
+          </div>
+        );
           case 2:
             return (
               <div className="popup bg-[#f5f5dc] border-2 border-[#3e2723] p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
