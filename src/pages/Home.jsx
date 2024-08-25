@@ -1,4 +1,4 @@
-import React , { Suspense, useState }from 'react'
+import React , { Suspense, useState, useEffect }from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei' 
 import Loader from '../components/Loader'
@@ -9,7 +9,18 @@ import HomeInfo from '../components/HomeInfo'
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); 
+    window.addEventListener('resize', handleResize); 
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const adjustShopScreenSize = () => {
     let screenScale= null;
@@ -85,6 +96,26 @@ const Home = () => {
          />
         </Suspense>
       </Canvas>
+      <div className='absolute bottom-5 left-0 right-0 flex items-center justify-center z-10 text-white'>
+        <div className={`flex items-center ${isMobile ? 'hidden' : 'block'} animate-slide`}>
+          <div className='mr-2 arrow-left'>
+            &#8592;
+          </div>
+          <p>Use arrow keys for better navigation</p>
+          <div className='ml-2 arrow-right'>
+            &#8594;
+          </div>
+        </div>
+        <div className={`text-center ${isMobile ? 'block' : 'hidden'}`}>
+        <div className='mr-2 arrow-left'>
+            &#8592;
+          </div>
+          Slide to navigate
+          <div className='ml-2 arrow-right'>
+            &#8594;
+          </div>
+        </div>
+      </div>
 
     </section>
   )
