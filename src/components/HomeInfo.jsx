@@ -3,7 +3,7 @@ import React from 'react'
 const HomeInfo = () => {
   return (
     <div>
-        Homeingo
+        <h1 className='text-white'>ACTIVE STAGE</h1>
       
     </div>
   )

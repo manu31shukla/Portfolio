@@ -1,5 +1,6 @@
 import React , { Suspense, useState }from 'react'
 import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei' 
 import Loader from '../components/Loader'
 import Shop from '../models/Shop'
 import Bird from '../models/Bird'
@@ -7,7 +8,7 @@ import HomeInfo from '../components/HomeInfo'
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
-  const [currentStage, setCurrentStage] = useState(1);
+  const [currentStage, setCurrentStage] = useState(false);
 
 
   const adjustShopScreenSize = () => {
@@ -73,6 +74,15 @@ const Home = () => {
             setCurrentStage={setCurrentStage}
 
           />
+           <OrbitControls
+           enablePan={true}
+           enableZoom={true}
+           enableRotate={true}
+           rotateSpeed={0.1} 
+           zoomSpeed={0.5}   
+           panSpeed={0.5} 
+           dampingFactor={0.2}  
+         />
         </Suspense>
       </Canvas>
 
