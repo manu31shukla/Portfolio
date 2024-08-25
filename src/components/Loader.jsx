@@ -3,9 +3,10 @@ import { Html } from '@react-three/drei'
 
 const Loader = () => {
   return (
-   <Html>
+   <Html center>
     <div className='flex justify-center items-center'>
-        <div className='animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500'></div>
+        <div className='animate-spin rounded-full h-64 w-64 border-t-4 border-b-4 border-darkBrown'></div>
+        <p className='absolute text-lg text-darkBrown'>Something cool is loading...</p>
     </div>
     </Html>
   )

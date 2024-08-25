@@ -10,6 +10,9 @@ export default {
         brown: {
           DEFAULT: "#D8CBC4", 
         },
+        darkBrown: {
+          DEFAULT: "#B7A69E"
+        },
         gray: {
           200: "#D5DAE1"
         },
