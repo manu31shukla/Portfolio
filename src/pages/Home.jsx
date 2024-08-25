@@ -89,6 +89,7 @@ const Home = () => {
             isRotating={isRotating}
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
+            currentStage={currentStage}
 
           />
            <OrbitControls

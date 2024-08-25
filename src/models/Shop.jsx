@@ -5,7 +5,14 @@ import {a} from '@react-spring/three'
 
 import japaneseTeaShopPath from '../assets/3d/japanese_tea_shop.glb';
 
-const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurrentStage,
+const thresholds = [
+  { start: 0.5, end: 1.1 },
+  { start: 2, end: 2.6 },
+  { start: 3.5, end: 4.1 },
+  { start: 5, end: 5.6 }
+];
+
+const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurrentStage, currentStage, 
   ...props}) => {
   const shopRef = useRef();
 
@@ -16,6 +23,7 @@ const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurren
   const rotationSpeed = useRef(0);
   const dampingFactor = 0.95;
   const previousRotation = useRef(0);
+  const [rotationFlag, setRotationFlag] = useState(false);
 
   const handlePointerDown = (e) => {
     e.stopPropagation(); 
@@ -45,10 +53,10 @@ const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurren
   const handleKeyDown = (e) => {  
     if(e.key === 'ArrowRight') {
       shopRef.current.rotation.y -= 0.01 * Math.PI;
-      rotationSpeed.current =  0.001 / Math.PI;
+      rotationSpeed.current =  -0.001 * Math.PI;
 
       if(!isRotating) { setIsRotating(true); }
-    } else if(e.key === 'ArrowLeft') {
+    } else if((e.key === 'ArrowLeft')&&(rotationFlag)) {
       shopRef.current.rotation.y += 0.01 * Math.PI;
       rotationSpeed.current = 0.001 * Math.PI;
 
@@ -83,24 +91,28 @@ useFrame(() => {
   const normalizedRotation = ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
   const prevRotation = previousRotation.current;
 
-  const thresholds = [Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI];
+  if (normalizedRotation >= 0.6 && !rotationFlag) {
+    setRotationFlag(true);
+  }
 
   const buffer = 0.01; 
+  let newStage = -1;
 
-  thresholds.forEach((threshold, index) => {
-    const crossedClockwise = prevRotation < threshold - buffer && normalizedRotation >= threshold + buffer;
-    const crossedCounterClockwise = prevRotation > threshold + buffer && normalizedRotation <= threshold - buffer;
-
-    if (crossedClockwise || crossedCounterClockwise) {
-      setCurrentStage(index + 1);
-      console.log(`Stage ${index + 1} activated`);
+  thresholds.forEach((range, index) => {
+    const inRange = normalizedRotation >= range.start - buffer && normalizedRotation <= range.end + buffer;
+    if (inRange) {
+      newStage = index + 1; 
     }
   });
 
+  if (newStage !== -1 && newStage !== currentStage) {
+    setCurrentStage(newStage);
+  } else if (newStage === -1 && currentStage !== 0) {
+    setCurrentStage(false); 
+  } 
+
   previousRotation.current = normalizedRotation;
 });
-// setCurrentStage(false);
-
 
 
 useEffect(() => {
@@ -122,7 +134,7 @@ useEffect(() => {
 [gl, handlePointerDown, handlePointerUp, handlePointerMove, handleKeyDown, handleKeyUp]);
 
   return (
-<a.group ref={shopRef} scale={scale} position={position}setCurrentStage={setCurrentStage}  {...props}>
+<a.group ref={shopRef} scale={scale} position={position}setCurrentStage={setCurrentStage} currentStage={currentStage} {...props}>
       <group scale={0.01}>
         <group position={[0, 100, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
           <mesh  
