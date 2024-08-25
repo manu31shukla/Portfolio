@@ -1,15 +1,18 @@
-import React , { Suspense, useState, useEffect }from 'react'
+import React , { Suspense, useState, useEffect, useRef }from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei' 
 import Loader from '../components/Loader'
 import Shop from '../models/Shop'
 import Bird from '../models/Bird'
 import HomeInfo from '../components/HomeInfo'
+import soundIcon from '../assets/sound-icon.png'; 
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isSoundOn, setIsSoundOn] = useState(true);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,6 +24,16 @@ const Home = () => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isSoundOn) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isSoundOn]);
 
   const adjustShopScreenSize = () => {
     let screenScale= null;
@@ -55,8 +68,17 @@ const Home = () => {
   const [shopScale, shopPosition, shopRotation]= adjustShopScreenSize();
   const [birdScale, birdPosition, birdRotation] = adjustBirdScreenSize();
 
+  const toggleSound = () => {
+    setIsSoundOn(prev => !prev);
+  };
+
   return (
     <section className='w-full h-screen relative'>
+      <audio ref={el => {
+          audioRef.current = el;
+          if (el) el.volume = 0.2; 
+        }} src="src/assets/japanese-traditional.mp3" loop />
+
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage}/>} 
       </div>
@@ -117,6 +139,27 @@ const Home = () => {
         </div>
       </div>
 
+      <div 
+        className='absolute z-20' 
+        style={{ 
+          top: isMobile ? '55px' : '20px', 
+          right: isMobile ? '25px' : '45px',
+          width: isMobile ? '20px' : '35px', 
+          height: isMobile ? '20px' : '35px'
+        }}
+      >
+        <img
+          src={soundIcon}
+          alt="Sound Toggle"
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            cursor: 'pointer', 
+            opacity: isSoundOn ? 1 : 0.5
+          }}
+          onClick={toggleSound}
+        />
+      </div>
     </section>
   )
 }
