@@ -28,7 +28,7 @@ const HomeInfo = ({ currentStage }) => {
       name: 'Score if you Can!',
       description: 'Classic Pong game with a modern twist',
       techStack: 'https://img.icons8.com/?size=100&id=8fkW1CkMYnE8&format=png&color=000000',
-      image: 'path/to/project1-image.png',
+      image: 'https://github.com/manu31shukla/Phaser-game/blob/main/public/assets/Demo-video.gif?raw=true',
       longDescription: `Developed a classic Pong game with a modern twist. Implemented a challenging AI logic to improve
       user retention and interest by making it difficult to score against the AI. Utilized the Parcel zero-config bundler for seamless
       development and leveraged Phaser’s physics engine to control the ball and paddles accurately.`,
@@ -39,7 +39,7 @@ const HomeInfo = ({ currentStage }) => {
       name: 'ShowRizz',
       description: 'Movie application',
       techStack: 'https://img.icons8.com/?size=100&id=11074&format=png&color=000000',
-      image: 'path/to/project2-image.png',
+      image: 'https://private-user-images.githubusercontent.com/82714021/241398997-c5f99c50-39c5-48ae-a5b9-f172c7164c76.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjQ3NDI3MTgsIm5iZiI6MTcyNDc0MjQxOCwicGF0aCI6Ii84MjcxNDAyMS8yNDEzOTg5OTctYzVmOTljNTAtMzljNS00OGFlLWE1YjktZjE3MmM3MTY0Yzc2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MjclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODI3VDA3MDY1OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRhZDExNmZiNWY2ODgzMjcyM2JiM2U4NmJiZTc5OTlmODY0OTJkODljNTk0Yjg2Mjg2YTQ1ZjFmNzcyZjY2ZDkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.9rPVTZz2C4BxBZxW09bGoK-7_I7rbJA7EeDfzZml2I4',
       longDescription: `Movie application built with React.js, JavaScript, HTML, and CSS. Utilized the tvmaze API to display a
       curated list of movies with detailed information. Implemented search and browse functionality, enabling users to view movie
       details and book tickets; data is stored in local storage, enhancing user retention by 25%.`,
@@ -50,7 +50,7 @@ const HomeInfo = ({ currentStage }) => {
       name: 'Weather Check Chrome Extension',
       description: 'Weather application',
       techStack: 'https://img.icons8.com/?size=100&id=pRGHNxNNTREQ&format=png&color=000000',
-      image: 'path/to/project2-image.png',
+      image: 'https://i0.wp.com/timleland.com/wp-content/uploads/2020/08/Old-Weather-Extension.png?resize=1024%2C640&ssl=1',
       longDescription: `Developed a Chrome extension using JavaScript, HTML, and CSS. Added
       real-time weather information, including temperature, humidity, and more, to Chrome’s toolbar or as a pop-up window.
       User-friendly installation and usage for quick access to weather updates, resulting in a 4.8/5 test user rating.`,
@@ -61,7 +61,7 @@ const HomeInfo = ({ currentStage }) => {
       name: 'Glow Do',
       description: 'Feature-rich Todo application',
       techStack: 'https://img.icons8.com/?size=100&id=43202&format=png&color=000000',
-      image: 'path/to/project2-image.png',
+      image: 'https://github.com/manu31shukla/Todo-Application/blob/main/demo-video.gif?raw=true',
       longDescription: `Created a feature-rich Todo application using React, Vite, HTML/CSS, and JavaScript. Allows users to create,
       read, mark complete, and delete tasks with a responsive design versatile to different screen sizes. Utilized Bootstrap for
       enhanced styling and Git/GitHub for version control.`,
@@ -76,8 +76,8 @@ const HomeInfo = ({ currentStage }) => {
       longDescription: `Developed a personal portfolio using React.js, Tailwind CSS, and Figma. Created a responsive design for
       seamless viewing on different devices. Implemented a contact form with validation to enhance user engagement and utilized
       Figma for design prototyping.`,
-      githubLink: '',
-      hostedLink: '',
+      githubLink: 'https://manu31shukla.github.io/Chatbot/',
+      hostedLink: 'https://manu31shukla.github.io/Chatbot/',
     },
     {
       name: 'Designing Projects',
@@ -86,8 +86,7 @@ const HomeInfo = ({ currentStage }) => {
       image: 'path/to/project2-image.png',
       longDescription: `Designing projects using Figma and Adobe XD. Created wireframes, mockups, and prototypes for various
       applications and websites. Collaborated with developers to ensure designs were implemented accurately and efficiently.`,
-      githubLink: '',
-      hostedLink: '',
+      designPortfolio: 'https://www.figma.com/file/1J9Z2Q7',
     }
   ];
 
@@ -138,7 +137,7 @@ const HomeInfo = ({ currentStage }) => {
     switch (currentStage) {
       case 4:
         return (
-          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-xl shadow-lg text-center max-w-[90%] sm:max-w-[70%] lg:max-w-[60%] mx-auto transform transition-transform duration-500 hover:scale-105">
+          <div className="popup animate-unfold bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-xl shadow-lg text-center max-w-[90%] sm:max-w-[70%] lg:max-w-[60%] mx-auto">
             <h2 className="text-[#3e2723] text-lg md:text-xl font-bold tracking-wide mb-3 flex items-center justify-center">
               👋 Welcome to My Coffee Shop <span className="ml-2 animate-pulse">☕</span>
             </h2>
@@ -149,7 +148,7 @@ const HomeInfo = ({ currentStage }) => {
         );
       case 3:
         return (
-          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-xl shadow-lg text-center max-w-[90%] sm:max-w-[80%] lg:max-w-[50%] mx-auto">
+          <div className="popup animate-unfold bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-xl shadow-lg text-center max-w-[90%] sm:max-w-[80%] lg:max-w-[50%] mx-auto">
             <h2 className="text-[#3e2723] text-lg md:text-xl font-bold tracking-wide mb-3 flex items-center justify-center">
               📋 Menu 📋
             </h2>
@@ -168,7 +167,7 @@ const HomeInfo = ({ currentStage }) => {
         );
       case 2:
         return (
-          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-lg shadow-lg max-w-[90%] sm:max-w-[80%] lg:max-w-[95%] mx-auto">
+          <div className="popup animate-unfold bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-lg shadow-lg max-w-[90%] sm:max-w-[80%] lg:max-w-[95%] mx-auto">
             <h2 className="text-[#3e2723] text-lg md:text-xl font-bold text-center">☕ Shop's Best Orders ☕</h2>
             <p className="text-[#3e2723] mt-2 text-center">👨‍💻 Personal projects:</p>
             <div className="mt-4">
@@ -190,7 +189,7 @@ const HomeInfo = ({ currentStage }) => {
             </div>
             {selectedProject && (
               <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedProject(null)}>
-                <div className="bg-darkBrown text-white p-4 md:p-6 rounded-lg max-w-[90%] sm:max-w-[80%] md:max-w-[50%] lg:max-w-[50%] w-full" onClick={e => e.stopPropagation()}>
+                <div className="bg-darkBrown text-white p-4 md:p-6 rounded-lg max-w-[90%] sm:max-w-[80%] md:max-w-[50%] lg:max-w-[50%] w-full animate-unfold" onClick={e => e.stopPropagation()}>
                   <h2 className="text-[#3e2723] text-sm md:text-xl font-bold">{selectedProject.name}</h2>
                   <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-38 sm:h-48 object-cover mt-4" />
                   <p className="text-[#3e2723] mt-4 text-xs md:text-base">{selectedProject.longDescription}</p>
@@ -219,7 +218,7 @@ const HomeInfo = ({ currentStage }) => {
         );
       case 1:
         return (
-          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-lg shadow-lg max-w-[100%] sm:max-w-[80%] lg:max-w-[100%] mx-auto">
+          <div className="popup animate-unfold bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-lg shadow-lg max-w-[100%] sm:max-w-[80%] lg:max-w-[100%] mx-auto">
             <h2 className="text-[#3e2723] text-lg md:text-xl font-bold text-center">☕ Barista's Experience ☕</h2>
             <div className="mt-4">
               {experiences.map((experience, index) => (
@@ -243,25 +242,15 @@ const HomeInfo = ({ currentStage }) => {
                 onClick={() => setSelectedExperience(null)}
               >
                 <div
-                  className="bg-darkBrown text-white p-4 md:p-6 rounded-lg max-w-[90%] sm:max-w-[80%] md:max-w-[50%] lg:max-w-[50%] w-full"
+                  className="bg-darkBrown text-white p-4 md:p-6 rounded-lg max-w-[90%] sm:max-w-[80%] md:max-w-[50%] lg:max-w-[50%] w-full animate-unfold"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <h2 className="text-[#3e2723] text-lg md:text-xl font-bold">{selectedExperience.company}</h2>
                   <p className="text-[#3e2723] mt-4 text-xs md:text-base">{selectedExperience.details}</p>
                   <div className="grid grid-cols-2 gap-4 mt-4">
                     {selectedExperience.screenshots.map((screenshot, index) => (
-                      <a
-                        key={index}
-                        href={screenshot}
-                        className="h-32 sm:h-40 bg-brown text-white py-2 px-2 sm:px-4 rounded hover:bg-[#3e2723] transition duration-300 flex items-center justify-center overflow-hidden"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src={screenshot}
-                          alt={`Screenshot ${index + 1}`}
-                          className="w-full h-full object-cover rounded"
-                        />
+                      <a key={index} href={screenshot} target="_blank" rel="noopener noreferrer">
+                        <img src={screenshot} alt="Screenshot" className="w-full h-24 md:h-32 object-cover rounded-lg" />
                       </a>
                     ))}
                   </div>

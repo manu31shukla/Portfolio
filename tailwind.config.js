@@ -45,9 +45,20 @@ export default {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.1)' },
         },
+        unfold: {
+          '0%': {
+            transform: 'scaleY(0)',
+            transformOrigin: 'top',
+          },
+          '100%': {
+            transform: 'scaleY(1)',
+            transformOrigin: 'top',
+          },
+        },
       },
       animation: {
         'enlarge': 'enlarge 1s ease-in-out',
+        unfold: 'unfold 0.5s ease-out',
       }
     },
   },
