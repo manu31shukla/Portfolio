@@ -63,7 +63,7 @@ const Home = () => {
 
   return (
     <section className='w-full h-screen relative'>
-      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+      <div className='absolute top-20 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage}/>} 
       </div>
       <Canvas 
@@ -113,11 +113,11 @@ const Home = () => {
             &#8594;
           </div>
         </div>
-        <div className={`text-center ${isMobile ? 'block' : 'hidden'}`}>
+        <div className={`text-center ${isMobile ? 'block' : 'hidden'} text-xs`}>
         <div className='mr-2 arrow-left'>
             &#8592;
           </div>
-          Slide to navigate
+          <span className="mx-1 sm:mx-2">Slide to navigate</span>
           <div className='ml-2 arrow-right'>
             &#8594;
           </div>

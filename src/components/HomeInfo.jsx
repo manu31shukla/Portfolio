@@ -93,7 +93,7 @@ const HomeInfo = ({ currentStage }) => {
 
   const experiences = [
     {
-      startMonth: 'August',
+      startMonth: 'Aug ',
       startYear: 2024,
       endMonth: 'Present',
       company: 'AI Cade',
@@ -106,9 +106,9 @@ const HomeInfo = ({ currentStage }) => {
       screenshots: ['path/to/screenshot1.png', 'path/to/screenshot2.png']
     },
     {
-      startMonth: 'July',
+      startMonth: 'Jul ',
       startYear: 2023,
-      endMonth: 'September',
+      endMonth: 'Sep ',
       endYear: 2023,
       company: 'Sangha',
       companyLogo: 'https://media.licdn.com/dms/image/v2/D4D0BAQG1DN_vVDUh4A/company-logo_200_200/company-logo_200_200/0/1685947183080?e=1732752000&v=beta&t=JMwH2LlrCA65zUIfk1WhJI0F3rnZnhrky4xq4aruy1g',
@@ -120,11 +120,11 @@ const HomeInfo = ({ currentStage }) => {
       screenshots: ['path/to/screenshot3.png', 'path/to/screenshot4.png']
     },
     {
-      startMonth: 'February',
+      startMonth: 'Feb ',
       startYear: 2023,
-      endMonth: 'April',
+      endMonth: 'Apr ',
       endYear: 2023,
-      company: 'SpellWork Technologies',
+      company: 'SpellWork',
       companyLogo: 'https://img.icons8.com/?size=100&id=u8QOFrHdMqkX&format=png&color=000000',
       position: 'UI/UX Designer Intern',
       details: `1. Feature Enhancement: Enhanced features including multiple event images, recurring event days, and attendee spot
@@ -138,131 +138,140 @@ const HomeInfo = ({ currentStage }) => {
     switch (currentStage) {
       case 4:
         return (
-          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-6 rounded-xl shadow-lg text-center max-w-sm mx-auto transform transition-transform duration-500 hover:scale-105">
-            <h2 className="text-[#3e2723] text-xl font-bold tracking-wide mb-3 flex items-center justify-center">
+          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-xl shadow-lg text-center max-w-[90%] sm:max-w-[70%] lg:max-w-[60%] mx-auto transform transition-transform duration-500 hover:scale-105">
+            <h2 className="text-[#3e2723] text-lg md:text-xl font-bold tracking-wide mb-3 flex items-center justify-center">
               👋 Welcome to My Coffee Shop <span className="ml-2 animate-pulse">☕</span>
             </h2>
-            <p className="text-[#3e2723] mt-2 text-base font-medium">
+            <p className="text-[#3e2723] mt-2 text-sm md:text-base">
               Hello! I'm <span className="font-bold underline">Manu Shukla</span>, a software developer. Let's explore my portfolio together!
             </p>
           </div>
         );
-        case 3:
+      case 3:
         return (
-          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 rounded-xl shadow-lg text-center max-w-sm mx-auto">
-            <h2 className="text-[#3e2723] text-lg font-bold tracking-wide mb-3 flex items-center justify-center">
+          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-xl shadow-lg text-center max-w-[90%] sm:max-w-[80%] lg:max-w-[50%] mx-auto">
+            <h2 className="text-[#3e2723] text-lg md:text-xl font-bold tracking-wide mb-3 flex items-center justify-center">
               📋 Menu 📋
             </h2>
-            <p className="text-[#3e2723] mb-3 text-sm font-medium">
+            <p className="text-[#3e2723] mb-3 text-xs md:text-sm">
               👨‍💻 Here are the skills I offer:
             </p>
             <div className="flex flex-wrap justify-center mt-4 gap-4">
-                {skills.map(skill => (
-                  <div key={skill.name} className="skill-item">
-                    <img src={skill.logo} alt={skill.name} className="w-16 h-16 object-contain cursor-pointer transition-transform transform hover:scale-110" />
-                    <p className="mt-2 text-[#3e2723]">{skill.name}</p>
-                  </div>
-                ))}
-              </div>
+              {skills.map((skill) => (
+                <div key={skill.name} className="skill-item w-12 h-12 sm:w-20 sm:h-20 flex flex-col items-center">
+                  <img src={skill.logo} alt={skill.name} className="w-8 h-8 sm:w-12 sm:h-12 object-contain cursor-pointer transition-transform transform hover:scale-110" />
+                  <p className="mt-2 text-[#3e2723] text-xs sm:text-sm">{skill.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
         );
-          case 2:
-            return (
-              <div className="popup bg-[#f5f5dc] border-2 border-[#3e2723] p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
-                <h2 className="text-[#3e2723] text-xl font-bold text-center">☕ Shop's Best orders ☕</h2>
-                <p className="text-[#3e2723] mt-2 text-center">👨‍💻 Personal projects:</p>
-                <div className="mt-4">
-                  {projects.map((project, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between border-b border-[#3e2723] py-2 cursor-pointer hover:bg-brown"
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      <div className="flex-1 flex items-center">
-                        <img src={project.techStack} alt={`${project.name} Tech Stack`} className="w-12 h-12 object-contain" />
-                        <div className="ml-4">
-                          <h3 className="text-[#3e2723] font-semibold">{project.name}</h3>
-                          <p className="text-[#3e2723]">{project.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {selectedProject && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedProject(null)}>
-                  <div className="bg-darkBrown text-white p-6 rounded-lg max-w-lg" onClick={e => e.stopPropagation()}>
-                    <h2 className="text-[#3e2723] text-xl font-bold">{selectedProject.name}</h2>
-                    <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-48 object-cover mt-4" />
-                    <p className="text-[#3e2723] mt-4">{selectedProject.longDescription}</p>
-                    <div className="mt-4 flex space-x-4">
-                      <a
-                        href={selectedProject.githubLink}
-                        className="bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub Link
-                      </a>
-                      <a
-                        href={selectedProject.hostedLink}
-                        className="bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Hosted Link
-                      </a>
+      case 2:
+        return (
+          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-lg shadow-lg max-w-[90%] sm:max-w-[80%] lg:max-w-[95%] mx-auto">
+            <h2 className="text-[#3e2723] text-lg md:text-xl font-bold text-center">☕ Shop's Best Orders ☕</h2>
+            <p className="text-[#3e2723] mt-2 text-center">👨‍💻 Personal projects:</p>
+            <div className="mt-4">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col md:flex-row items-center justify-between border-b border-[#3e2723] py-2 cursor-pointer hover:bg-brown"
+                  onClick={() => setSelectedProject(project)}
+                >
+                  <div className="flex items-center w-full">
+                    <img src={project.techStack} alt={`${project.name} Tech Stack`} className="w-6 h-6 sm:w-12 sm:h-12 object-contain" />
+                    <div className="ml-4">
+                      <h3 className="text-[#3e2723] font-semibold text-xs sm:text-sm md:text-base">{project.name}</h3>
+                      <p className="text-[#3e2723] text-xs sm:text-sm md:text-sm">{project.description}</p>
                     </div>
                   </div>
                 </div>
-              )}
+              ))}
+            </div>
+            {selectedProject && (
+              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedProject(null)}>
+                <div className="bg-darkBrown text-white p-4 md:p-6 rounded-lg max-w-[90%] sm:max-w-[80%] md:max-w-[50%] lg:max-w-[50%] w-full" onClick={e => e.stopPropagation()}>
+                  <h2 className="text-[#3e2723] text-sm md:text-xl font-bold">{selectedProject.name}</h2>
+                  <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-38 sm:h-48 object-cover mt-4" />
+                  <p className="text-[#3e2723] mt-4 text-xs md:text-base">{selectedProject.longDescription}</p>
+                  <div className="mt-4 flex flex-col sm:flex-row gap-4">
+                    <a
+                      href={selectedProject.githubLink}
+                      className="bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300 text-xs sm:text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Link
+                    </a>
+                    <a
+                      href={selectedProject.hostedLink}
+                      className="bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300 text-xs sm:text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Hosted Link
+                    </a>
+                  </div>
+                </div>
               </div>
-            );
-            case 1:
-              return (
-                <div className="popup bg-[#f5f5dc] border-2 border-[#3e2723] p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
-                  <h2 className="text-[#3e2723] text-xl font-bold text-center">☕ Barista's Expertise ☕</h2>
-                  <div className="mt-4">
-                    {experiences.map((experience, index) => (
-                      <div
+            )}
+          </div>
+        );
+      case 1:
+        return (
+          <div className="popup bg-gradient-to-r from-[#f5f5dc] to-[#ede0c9] border-2 border-[#3e2723] p-4 md:p-6 rounded-lg shadow-lg max-w-[100%] sm:max-w-[80%] lg:max-w-[100%] mx-auto">
+            <h2 className="text-[#3e2723] text-lg md:text-xl font-bold text-center">☕ Barista's Experience ☕</h2>
+            <div className="mt-4">
+              {experiences.map((experience, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col border-b border-[#3e2723] py-2 cursor-pointer hover:bg-brown"
+                  onClick={() => setSelectedExperience(experience)}
+                >
+                  <div className="flex items-center justify-between space-x-2 sm:space-x-4 md:space-x-6">
+                    <img src={experience.companyLogo} alt={`${experience.company} Logo`} className="w-12 h-12 object-contain" />
+                    <h3 className="text-[#3e2723] font-semibold text-xs sm:text-md md:text-base">{experience.company}</h3>
+                    <p className="text-[#3e2723] text-xs md:text-sm">{experience.startMonth}{experience.startYear} - {experience.endMonth}{experience.endYear}</p>
+                  </div>
+                  <p className="text-[#3e2723] text-xs md:text-sm mt-1">{experience.position}</p>
+                </div>
+              ))}
+            </div>
+            {selectedExperience && (
+              <div
+                className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70"
+                onClick={() => setSelectedExperience(null)}
+              >
+                <div
+                  className="bg-darkBrown text-white p-4 md:p-6 rounded-lg max-w-[90%] sm:max-w-[80%] md:max-w-[50%] lg:max-w-[50%] w-full"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <h2 className="text-[#3e2723] text-lg md:text-xl font-bold">{selectedExperience.company}</h2>
+                  <p className="text-[#3e2723] mt-4 text-xs md:text-base">{selectedExperience.details}</p>
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    {selectedExperience.screenshots.map((screenshot, index) => (
+                      <a
                         key={index}
-                        className="border-b border-[#3e2723] py-4 cursor-pointer hover:bg-brown"
-                        onClick={() => setSelectedExperience(experience)}
+                        href={screenshot}
+                        className="h-32 sm:h-40 bg-brown text-white py-2 px-2 sm:px-4 rounded hover:bg-[#3e2723] transition duration-300 flex items-center justify-center overflow-hidden"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <div className="flex items-center">
-                          <img src={experience.companyLogo} alt={`${experience.company} Logo`} className="w-12 h-12 object-contain" />
-                          <div className="ml-4">
-                            <h3 className="text-[#3e2723] font-semibold">{experience.company} 🌟</h3>
-                            <p className="text-[#3e2723]">{experience.position} ({experience.startMonth} {experience.startYear} - {experience.endMonth} {experience.endYear})</p>
-                          </div>
-                        </div>
-                      </div>
+                        <img
+                          src={screenshot}
+                          alt={`Screenshot ${index + 1}`}
+                          className="w-full h-full object-cover rounded"
+                        />
+                      </a>
                     ))}
                   </div>
-                  {selectedExperience && (
-                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setSelectedExperience(null)}>
-                    <div className="bg-white p-6 rounded-lg max-w-lg" onClick={e => e.stopPropagation()}>
-                      <h2 className="text-[#3e2723] text-xl font-bold">{selectedExperience.company} 🌟</h2>
-                      <p className="text-[#3e2723] mt-2">{selectedExperience.details}</p>
-                      <div className="flex gap-4 mt-4">
-                        {selectedExperience.screenshots.map((screenshot, index) => (
-                          <a
-                            key={index}
-                            href={screenshot}
-                            className="w-1/2 h-40 bg-brown text-white py-2 px-4 rounded hover:bg-[#3e2723] transition duration-300 flex items-center justify-center"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img src={screenshot} alt={`Screenshot ${index + 1}`} className="w-full h-full object-cover rounded" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
                 </div>
-              );
+              </div>
+            )}
+          </div>
+        );
       default:
-        return <p>Select a stage to see details.</p>;
+        return null;
     }
   };
 
