@@ -47,7 +47,7 @@ const Shop = ({scale, position, rotation, isRotating, setIsRotating,   setCurren
     shopRef.current.rotation.y += delta * 0.02 * Math.PI ;
 
     lastX.current = clientX;
-    rotationSpeed.current = delta * 0.001 * Math.PI;
+    rotationSpeed.current = delta * 0.00001 * Math.PI;
   }
 
   const handleKeyDown = (e) => {  

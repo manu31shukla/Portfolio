@@ -13,7 +13,7 @@ const Contact = () => {
   return (
     <div className="flex flex-col items-center bg-lightBrown text-brown-800 p-6 font-cursive">
       <div className="relative mb-6 mt-16">
-        <img src="src/assets/girl-hello.gif" alt="Animated Barista" className="w-108 animate-wave" />
+        <img src="girl-hello.gif" alt="Animated Barista" className="w-108 animate-wave" />
       </div>
       <div className="flex flex-wrap justify-center p-4 rounded-lg shadow-lg bg-coffee-pattern bg-cover bg-center opacity-90">
         {profiles.map((profile, index) => (
