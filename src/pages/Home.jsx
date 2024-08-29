@@ -103,7 +103,7 @@ const Home = () => {
          />
         </Suspense>
       </Canvas>
-      <div className='absolute bottom-5 left-0 right-0 flex items-center justify-center z-10 text-white'>
+      <div className='absolute bottom-12 left-0 right-0 flex items-center justify-center z-10 text-white'>
         <div className={`flex items-center ${isMobile ? 'hidden' : 'block'} animate-slide`}>
           <div className='mr-2 arrow-left'>
             &#8592;
