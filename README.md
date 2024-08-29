@@ -4,8 +4,8 @@ Welcome to my portfolio! Step into a virtual traditional Japanese coffee shop wh
 
 ## 🚀 Live Demo
 
-Experience the cozy, interactive coffee shop environment and explore my work [here](https://manu-portfolio-netlify.app).
-![Soccer Showdown](demo.gif)  
+Experience the cozy, interactive coffee shop environment and explore my work [here](https://manu-portfolio.netlify.app).
+![Soccer Showdown](./public/demo.gif)  
 
 
 
