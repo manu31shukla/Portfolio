@@ -49,7 +49,7 @@ const HomeInfo = ({ currentStage }) => {
       name: 'Portfolio',
       description: `You're looking at it!`,
       techStack: 'https://img.icons8.com/?size=100&id=ZLTrllhOQJs2&format=png&color=000000',
-      image: 'path/to/project2-image.png',
+      image: 'demo.gif',
       longDescription: `Explore my interactive portfolio, crafted with Next.js, Tailwind CSS, and Three.js, and enhanced with 3D models from Sketchfab. ☕️Set in a vibrant coffee shop theme, this immersive experience invites you to navigate through a cozy virtual café. Each corner showcases my skills and projects in a dynamic and engaging way, blending modern web technologies with a charming, interactive environment. 🎨`,
       githubLink: 'https://github.com/manu31shukla/Portfolio',
       hostedLink: 'https://manu-portfolio.netlify.app/',
